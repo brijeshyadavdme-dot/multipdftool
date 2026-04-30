@@ -1,0 +1,6 @@
+{
+  "name": "Expense Tracker & Milk Diary",
+  "description": "A comprehensive daily expense tracker with specialized features for milk diary, fuel logging, and loan management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

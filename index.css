@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-nebula-deep: #f1f5f9;
+  --color-nebula-surface: #ffffff;
+  --color-nebula-card: #ffffff;
+  --color-nebula-border: #cbd5e1;
+  --color-nebula-accent: #2563eb;
+  --color-nebula-text-primary: #0f172a;
+  --color-nebula-text-secondary: #334155;
+}
+
+@layer base {
+  body {
+    @apply antialiased min-h-screen transition-colors duration-300;
+    font-family: var(--font-sans);
+  }
+}
+
+.dark {
+  --color-nebula-deep: #020617;
+  --color-nebula-surface: #0f172a;
+  --color-nebula-card: #1e293b;
+  --color-nebula-border: #1e293b;
+  --color-nebula-accent: #3b82f6;
+  --color-nebula-text-primary: #f8fafc;
+  --color-nebula-text-secondary: #94a3b8;
+  background-color: var(--color-nebula-deep);
+  color: var(--color-nebula-text-primary);
+}
+
+.light {
+  background-color: var(--color-nebula-deep);
+  color: var(--color-nebula-text-primary);
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-shadow {
+  box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.1);
+}
+.dark .card-shadow {
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.nebula-panel {
+  @apply rounded-2xl border transition-all;
+}
+
+.dark .nebula-panel {
+  @apply bg-nebula-surface border-nebula-border;
+}
+
+.light .nebula-panel {
+  @apply bg-white border-slate-200 shadow-sm;
+}
+
+.nebula-input {
+  @apply w-full p-3 rounded-xl outline-none transition-all;
+}
+
+.dark .nebula-input {
+  @apply bg-nebula-deep border border-nebula-border text-nebula-text-primary focus:border-nebula-accent;
+}
+
+.light .nebula-input {
+  @apply bg-white border border-slate-200 text-slate-900 focus:border-indigo-500 shadow-sm;
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
